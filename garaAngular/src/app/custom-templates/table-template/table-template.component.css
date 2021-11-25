@@ -1,0 +1,18 @@
+
+
+table {
+    table-layout: fixed;
+    width: 620px;
+   
+  }
+  
+  table tr td , table tr th {
+      border:1px solid black
+    }
+
+  td {
+  
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }

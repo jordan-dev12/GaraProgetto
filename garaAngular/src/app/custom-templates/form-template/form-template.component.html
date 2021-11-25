@@ -1,0 +1,91 @@
+<form  class="mt-5 ml-5" #templateForm="ngForm"  (submit)="onSubmit(templateForm.value)">
+
+<div class="d-flex justify-content-center">
+    <div  id="regPartecipante" *ngIf="registrazione" >
+
+        <mat-form-field appearance="fill">
+           <mat-label>Nome</mat-label>
+            <input matInput
+               name="nome" 
+               class="inputForm" 
+               type="text" 
+               ngModel
+               required>
+           </mat-form-field><br><br>
+        
+        
+           <mat-form-field appearance="fill">
+            <mat-label>Cognome</mat-label>
+             <input matInput
+                name="cognome" 
+                class="inputForm" 
+                type="text" 
+                ngModel
+                required>
+            </mat-form-field> <br><br>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                 <input matInput
+                    name="email" 
+                    class="inputForm" 
+                    type="email" 
+                    ngModel
+                    required>
+                </mat-form-field><br><br>
+
+            <mat-form-field appearance="fill">
+                   <mat-label>Password</mat-label>
+                    <input matInput
+                        name="password" 
+                        class="inputForm" 
+                        ngModel
+                        type="password" 
+                        required>
+                    </mat-form-field><br><br>   
+    </div>
+
+    
+
+    <div id="login" *ngIf="login" >
+
+        <mat-form-field appearance="fill">
+           <mat-label>username</mat-label>
+            <input matInput
+               name="username" 
+               class="inputForm" 
+               type="text" 
+               ngModel
+               required>
+           </mat-form-field><br><br>
+            <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+              <input matInput
+                name="password" 
+                class="inputForm" 
+                ngModel
+                type="password" 
+                required>
+            </mat-form-field><br><br>   
+    </div>
+
+</div>
+
+<div class="d-flex justify-content-center" >       
+    <mat-dialog-actions class="conferma">
+        <button 
+            mat-raised-button
+            type="submit"
+           >
+            OK
+        </button>
+        <button 
+           (click)="annullare(templateForm)"
+            mat-raised-button
+            type="button"
+           >
+            ANNULLA
+        </button>
+    </mat-dialog-actions> 
+</div> 
+</form>

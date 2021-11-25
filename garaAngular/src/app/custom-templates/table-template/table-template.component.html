@@ -1,0 +1,52 @@
+
+
+<div  class="mt-5 ml-5"  >
+
+ <table class="table"   >
+    <!-- NOMI COLONNE -->
+    <thead>
+      <tr>
+          <th *ngFor="let colonna of columns">{{colonna}}</th>
+          <th>BUTTON</th>
+      </tr>
+      
+    </thead>
+
+    <tbody>
+        <ng-container *ngFor="let obj of objects">
+         
+          <!-- CONTROLLO QUANTE RIGHE MOSTRARE IN BASE ALLA PAGINAZIONE SCELTA -->
+          <tr  >
+  
+            <!-- CAMPI RELATIVI ALL'OGGETTO IN BASE ALLA COLONNA -->
+            <ng-container *ngFor="let item of items">
+              <td  >{{obj[item]}}</td>
+              
+            </ng-container>
+
+              <!-- GESTIONE PULSANTI PER LE VARIE AZIONI SUGLI OGGETTI -->
+             <td id="pulsanti"  width="20%" >
+            <div >
+              <ng-container *ngFor="let button of buttons" > 
+                <button (click)="buttonFunction(obj,button.title)">
+                <mat-icon>{{button.title}}</mat-icon> 
+              </button>
+              </ng-container>
+            </div>
+          </td>
+         
+            
+
+        </tr>
+      </ng-container>
+    </tbody>
+
+
+      <!-- MESSAGGIO DA MOSTRARE IN CASO LA TABELLA DEGLI OGGETTI SIA VUOTA -->
+     
+      
+    </table>
+  </div>
+
+    
+
