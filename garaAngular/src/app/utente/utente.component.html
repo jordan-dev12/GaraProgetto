@@ -11,7 +11,9 @@
 <h1>Benvenuto   </h1>
 </div>
 
-
+<div class="alert alert-success" role="alert" *ngIf="messageResult">
+  A simple success alert—check it out!
+</div>
 
 <app-table-template
     [columns]="colonne"

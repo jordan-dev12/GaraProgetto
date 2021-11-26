@@ -18,7 +18,7 @@ export class ParServiceService {
   
   prenotaGara(idGara : number, emailUtente :  string){ 
 
-    return this.http.post<any>(this.apiAddress + '/prenota/' + idGara + "/" + emailUtente ,{responseType:'text' as 'json'});
+    return this.http.post<any>(this.apiAddress + '/prenota/' + idGara + "/" + emailUtente,{responseType:'text'});
  }
   
   

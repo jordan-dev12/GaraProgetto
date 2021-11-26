@@ -17,8 +17,11 @@ export class UtenteComponent implements OnInit {
   buttons : any;
   object : any;
   data : garas[] | undefined;
-  emailUtente:any;
+  emailUtente:string;
   sub: any;
+  result: any;
+  messageResult : boolean;
+ 
 
   constructor(private garaService :GaraServiceService,private dialog: MatDialog,
     private partService : ParServiceService,
@@ -41,13 +44,18 @@ export class UtenteComponent implements OnInit {
         class: "pencil"
       }
     ];
+
+    this.messageResult = false;
    
     this.getGara();
 
     this.sub=this.activatedroute.paramMap.subscribe(params => { 
       console.log(params);
-       this.emailUtente = params.get('email');   
+       this.result = params.get('email');   
    });
+
+   this.emailUtente = this.result;
+  
   }
 
   public buttonFunction = (obj : any,title : any) => this.manageFunctions(obj,title);
@@ -85,6 +93,7 @@ export class UtenteComponent implements OnInit {
       let result = this.partService.prenotaGara(gara.id,this.emailUtente);
 
       result.subscribe((data)=> console.log(data));
+      this.messageResult = true;
     }
 
   }
