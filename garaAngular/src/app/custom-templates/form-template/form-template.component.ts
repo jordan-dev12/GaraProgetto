@@ -12,7 +12,7 @@ export class FormTemplateComponent implements OnInit {
 
   
   @Input() submitFunction: any;
-  @Input() login : boolean | undefined;
+  @Input() login : boolean;
   @Input() registrazione : any;
   
  
